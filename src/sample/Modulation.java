@@ -2,7 +2,7 @@ package sample;//public class Modulation {
 //
 //    public WavFile getFinalSound(){
 //        /*
-//        Wavfile instrument = Source.getInstrument(UI.instrumentNumber)
+//        Wavfile instrument = Instruments.getInstrument(UI.instrumentNumber)
 //        int pitch = UI.getPitch(currentStep)
 //        int length = getSoundLength(UI.getGateMode(currentStep), UI.getPulseCount(currentStep), currentPulse)
 //        instrument = modulatePitch(instrument, pitch)
@@ -10,7 +10,7 @@ package sample;//public class Modulation {
 //
 //        or
 //
-//        Wavfile instrument = Source.getInstrument(UI.instrumentNumber,UI.getPitch(currentStep))
+//        Wavfile instrument = Instruments.getInstrument(UI.instrumentNumber,UI.getPitch(currentStep))
 //        int length = getSoundLength(UI.getGateMode(currentStep), UI.getPulseCount(currentStep), currentPulse)
 //        return modulateLength(instrument, length)
 //        */

@@ -2,7 +2,7 @@ package sample;
 
 import java.io.*;
 
-public class Source {
+public class Instruments {
     public static void main(String[] args){
         try{
             WavFile wavFile = WavFile.openWavFile(new File(args[0]));
