@@ -6,6 +6,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 
 public class Sequencer {
+    private Settings settings;
     private Clock clock;
     private Playback playback;
     @FXML
@@ -18,20 +19,20 @@ public class Sequencer {
 
 
     public Sequencer(){
-        clock=new Clock();
-        playback=new Playback();
+    settings = new Settings();
+    clock=new Clock(settings);
     }
 
-    public void changeplay(){ clock.setPlay(!play.isSelected());}
+    public void changeplay(){ settings.setPlay(!play.isSelected());}
 
-    public void changeinstrument(){playback.setInstrument(instrument.getValue().toString());}
+    public void changeinstrument(){settings.setInstrument(instrument.getValue().toString());}
 
-    public void changetempo() { clock.setTempo((int)tempo.getValue()); }
+    public void changetempo() { settings.setTempo((int)tempo.getValue()); }
 
-    public void changesteps(){ clock.setStep((int)steps.getValue()); }
+    public void changesteps(){  settings.setStep((int)steps.getValue());  }
 
     public void changeskip(){
-        clock.setSkip(new Boolean[]{
+        settings.setSkip(new Boolean[]{
             skip1.isSelected(),
             skip2.isSelected(),
             skip3.isSelected(),
@@ -44,7 +45,7 @@ public class Sequencer {
     }
 
     public void changepulsecounts(){
-        clock.setPulseCount(new int[]{
+        settings.setPulseCount(new int[]{
             (int)PulseCount1.getValue(),
             (int)PulseCount2.getValue(),
             (int)PulseCount3.getValue(),
@@ -58,7 +59,7 @@ public class Sequencer {
     }
 
     public void changemode(){
-        clock.setGateMode(new int[]{
+        settings.setGateMode(new int[]{
             (int)Gate1.getValue(),
             (int)Gate2.getValue(),
             (int)Gate3.getValue(),
