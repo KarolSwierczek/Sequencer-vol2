@@ -11,33 +11,32 @@ public class Clock {
     public Clock(Settings s) { settings = s; }
 
 
-//    public void update(boolean play){
-//        while(UI.getPlay()){
-//            UI.updateUI();
-//
-//            if(timeCount >= UI.getTempo()*TIME_CONSTANT){
-//                timeCount = 0;
-//            }
-//
-//            if(timeCount == 0){
-//                if(currentPulse >= UI.getPulseCount(currentStep)) {
-//                    currentPulse = 0;
-//                    currentStep = (currentStep + 1) % UI.getSteps();
-//                    while (UI.getSkip(currentStep)){
-//                        currentStep = (currentStep + 1) % UI.getSteps();
-//                    }
-//                }
-//                else{
-//                    currentPulse++;
-//                }
-//                Playback.play(currentStep, currentPulse);
-//            }
-//
-//            lastTime = currentTime;
-//            currentTime = System.currentTimeMillis();
-//            timeCount += currentTime - lastTime;
-//        }
-//    }
+    public void fixedupdate(){
+        while(settings.getPlay()){
+            if(timeCount >= settings.getTempo()*TIME_CONSTANT){
+                timeCount = 0;
+            }
+
+            if(timeCount == 0){
+                if(currentPulse >= settings.getPulseCount(currentStep)) {
+                    currentPulse = 0;
+                    currentStep = (currentStep + 1) % settings.getSteps();
+                    while (settings.getSkip(currentStep)){
+                        currentStep = (currentStep + 1) % settings.getSteps();
+                    }
+                }
+                else{
+                    currentPulse++;
+                }
+                //playback.play(currentStep, currentPulse);
+                System.out.println('bip')
+            }
+
+            lastTime = currentTime;
+            currentTime = System.currentTimeMillis();
+            timeCount += currentTime - lastTime;
+        }
+    }
 }
 
 
