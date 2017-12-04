@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <Slider fx:id="tempo" blockIncrement="1.0" majorTickUnit="1.0" max="8.0" minorTickCount="1" onMouseReleased="#changetempo" pickOnBounds="false" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+    <ToolBar fx:id="skipbar" prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <CheckBox fx:id="skip1" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+            <CheckBox fx:id="skip2" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+            <CheckBox fx:id="skip3" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+            <CheckBox fx:id="skip4" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+            <CheckBox fx:id="skip5" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+            <CheckBox fx:id="skip6" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+            <CheckBox fx:id="skip7" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+            <CheckBox fx:id="skip8" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+
+        </items>
+    </ToolBar>
+    <ComboBox fx:id="instrument" onMousePressed="#changeinstrument" prefWidth="150.0" promptText="Instrument" />
+    <Slider fx:id="steps" blockIncrement="1" majorTickUnit="1" max="8.0" minorTickCount="1" onMouseReleased="#changesteps" pickOnBounds="false" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1" />
+    <HBox prefHeight="28.0" prefWidth="600.0">
+        <children>
+            <CheckBox fx:id="longg" mnemonicParsing="false" onAction="#changemode" text="Long" />
+            <CheckBox fx:id="multiple" mnemonicParsing="false" onAction="#changemode" text="Multiple" />
+            <CheckBox fx:id="single" mnemonicParsing="false" onAction="#changemode" text="Single" />
+            <CheckBox fx:id="pause" mnemonicParsing="false" onAction="#changemode" text="Pause" />
+        </children>
+    </HBox>
+</VBox>
