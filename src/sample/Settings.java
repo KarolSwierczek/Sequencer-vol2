@@ -17,7 +17,7 @@ public class Settings {
     //4 -PAUSE - N pulses-long pause
     private int[] gateMode;
     private String Instrument;
-    //private int[] Pitch;
+    private int[] Pitch;
 
 
     public Settings(){ Skip= new Boolean[8]; }
@@ -30,7 +30,7 @@ public class Settings {
     public int[] getPulseCount() { return PulseCount; }
     public int[] getGateMode() { return gateMode; }
     public String getInstrument() { return Instrument; }
-    //public int getPitch() { return Pitch; }
+    public int[] getPitch() { return Pitch; }
 
 
     public void setPlay(Boolean play){ Play=play;  System.out.println(play);}
@@ -40,5 +40,5 @@ public class Settings {
     public void setPulseCount(int [] pulse){PulseCount=pulse;}
     public void setGateMode(int [] gatemode){ gateMode=gatemode; }
     public void setInstrument(String instrument){ Instrument=instrument; }
-    //public void setPitch(int pitch){ Pitch = pitch; }
+    public void setPitch(int []pitch){ Pitch = pitch; }
 }

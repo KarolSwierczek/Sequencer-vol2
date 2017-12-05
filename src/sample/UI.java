@@ -6,28 +6,27 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 
 public class UI {
-    private Settings settings
+    private Settings settings;
     @FXML
     private CheckBox skip1,skip2,skip3,skip4,skip5,skip6,skip7,skip8,play;
     @FXML
     private ComboBox instrument;
     @FXML
     private Slider PulseCount1,PulseCount2,PulseCount3,PulseCount4,PulseCount5,PulseCount6,PulseCount7,PulseCount8,
-            Gate1,Gate2,Gate3,Gate4,Gate5,Gate6,Gate7,Gate8,steps,tempo;
+            Gate1,Gate2,Gate3,Gate4,Gate5,Gate6,Gate7,Gate8,steps,tempo,Pitch1,Pitch2,Pitch3,Pitch4,Pitch5,Pitch6,Pitch7,Pitch8;
 
-    public UI(Settings s){
-        settings = s;
-        changeplay();
-        changetempo();
-        changesteps();
-        changeskip();
-        changepulsecounts();
-        changemode();
-        changeinstrument();
-        //changepitch();
+    public UI(){
+//        changeplay();
+//        changetempo();
+//        changesteps();
+//        changeskip();
+//        changepulsecounts();
+//        changemode();
+//        changeinstrument();
+//        changepitch();
     }
 
-    public void changeplay(){ settings.setPlay(!play.isSelected());}
+    public void changeplay(){ settings.setPlay(play.isSelected());}
 
     public void changeinstrument(){settings.setInstrument(instrument.getValue().toString());}
 
@@ -74,5 +73,23 @@ public class UI {
                 (int)Gate8.getValue(),
 
         });
+    }
+
+    public void changepitch(){
+        settings.setPitch(new int[]{
+                (int)Pitch1.getValue(),
+                (int)Pitch2.getValue(),
+                (int)Pitch3.getValue(),
+                (int)Pitch4.getValue(),
+                (int)Pitch5.getValue(),
+                (int)Pitch6.getValue(),
+                (int)Pitch7.getValue(),
+                (int)Pitch8.getValue(),
+
+        });
+    }
+
+    public void setSettings( Settings value ) {
+        settings = value;
     }
 }
