@@ -27,6 +27,7 @@ public class Main extends Application {
         // Pobieramy stworzoną wcześniej zmienną UI i przypisujemy do niej settings
         UI ui = fxmlLoader.getController();
         ui.setSettings(settings);
+        ui.setClock(clock);
 
         primaryStage.setTitle("Sekwencer");
         primaryStage.setScene(new Scene(root, 600, 500));

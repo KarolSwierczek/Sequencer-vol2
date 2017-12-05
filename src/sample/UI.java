@@ -7,6 +7,7 @@ import javafx.scene.control.Slider;
 
 public class UI {
     private Settings settings;
+    private Clock clock;
     @FXML
     private CheckBox skip1,skip2,skip3,skip4,skip5,skip6,skip7,skip8,play;
     @FXML
@@ -26,7 +27,12 @@ public class UI {
 //        changepitch();
     }
 
-    public void changeplay(){ settings.setPlay(play.isSelected());}
+    public void changeplay(){
+        settings.setPlay(play.isSelected());
+        if (play.isSelected()){
+            clock.fixedupdate();
+        }
+    }
 
     public void changeinstrument(){settings.setInstrument(instrument.getValue().toString());}
 
@@ -91,5 +97,9 @@ public class UI {
 
     public void setSettings( Settings value ) {
         settings = value;
+    }
+
+    public void setClock( Clock value ) {
+        clock = value;
     }
 }
