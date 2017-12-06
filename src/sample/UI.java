@@ -5,9 +5,9 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 
-public class UI {
+public class UI extends Thread{
     private Settings settings;
-    private Clock clock;
+    private final Object lock = new Object();
     @FXML
     private CheckBox skip1,skip2,skip3,skip4,skip5,skip6,skip7,skip8,play;
     @FXML
@@ -15,8 +15,7 @@ public class UI {
     @FXML
     private Slider PulseCount1,PulseCount2,PulseCount3,PulseCount4,PulseCount5,PulseCount6,PulseCount7,PulseCount8,
             Gate1,Gate2,Gate3,Gate4,Gate5,Gate6,Gate7,Gate8,steps,tempo,Pitch1,Pitch2,Pitch3,Pitch4,Pitch5,Pitch6,Pitch7,Pitch8;
-
-    public UI(){
+    public UI() {
 //        changeplay();
 //        changetempo();
 //        changesteps();
@@ -26,11 +25,13 @@ public class UI {
 //        changeinstrument();
 //        changepitch();
     }
-
     public void changeplay(){
         settings.setPlay(play.isSelected());
-        if (play.isSelected()){
-            clock.fixedupdate();
+        synchronized (lock) {
+            if (play.isSelected()) {
+                System.out.println("notified");
+                lock.notify();
+            }
         }
     }
 
@@ -41,7 +42,7 @@ public class UI {
     public void changesteps(){  settings.setSteps((int)steps.getValue());  }
 
     public void changeskip(){
-        settings.setSkip(new Boolean[]{
+        settings.setSkip(new boolean[]{
                 skip1.isSelected(),
                 skip2.isSelected(),
                 skip3.isSelected(),
@@ -99,7 +100,7 @@ public class UI {
         settings = value;
     }
 
-    public void setClock( Clock value ) {
-        clock = value;
+    public Object getLock(){
+        return lock;
     }
 }

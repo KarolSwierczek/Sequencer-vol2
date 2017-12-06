@@ -2,12 +2,12 @@ package sample;
 
 public class Settings {
 
-    private Boolean Play;
+    private boolean Play;
     private int Tempo;
     // total number of steps
     private int Steps;
     //Skip - zwraca ktore z stepow mamy pominac(wartsoc true)
-    private Boolean[] Skip;
+    private boolean[] Skip;
     //PulseCount - zwraca wartosci w przedziale 1-8 z kazdego slidera tak jak na obrazku
     private int[] PulseCount;
     //gateMode - zwraca wartosci 1-4 z kazdego slidera tak jak na obrazku
@@ -20,23 +20,23 @@ public class Settings {
     private int[] Pitch;
 
 
-    public Settings(){ Skip= new Boolean[8]; }
+    public Settings(){ Skip= new boolean[8]; Play=false;}
 
 
-    public Boolean getPlay() { return Play; }
+    public boolean getPlay() { return Play; }
     public int getTempo() { return Tempo; }
     public int getSteps() { return Steps; }
-    public Boolean[] getSkip() { return Skip; }
+    public boolean[] getSkip() { return Skip; }
     public int[] getPulseCount() { return PulseCount; }
     public int[] getGateMode() { return gateMode; }
     public String getInstrument() { return Instrument; }
     public int[] getPitch() { return Pitch; }
 
 
-    public void setPlay(Boolean play){ Play=play;  System.out.println(play);}
+    public void setPlay(boolean play){ Play=play;  System.out.println(play);}
     public void setTempo(int tempo){ Tempo=tempo; }
     public void setSteps(int steps){Steps=steps;}
-    public void setSkip(Boolean [] skip){ Skip=skip; }
+    public void setSkip(boolean [] skip){ Skip=skip; }
     public void setPulseCount(int [] pulse){PulseCount=pulse;}
     public void setGateMode(int [] gatemode){ gateMode=gatemode; }
     public void setInstrument(String instrument){ Instrument=instrument; }
