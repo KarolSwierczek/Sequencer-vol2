@@ -2,6 +2,7 @@ package sample;
 
 public class Clock extends Thread{
     private Settings settings;
+    private Playback playback;
     private Object lock;
     private boolean exit = false;
     private static float TIME_CONSTANT = 200000000.0f; // converts time from tempo to ms
@@ -15,8 +16,9 @@ public class Clock extends Thread{
     //for testing purposes only!
     private static String[] ticks = {"bip", "bop"};
 
-    public Clock(Settings s, Object l) {
+    public Clock(Settings s, Playback p, Object l) {
         settings = s;
+        playback = p;
         lock = l;
     }
 
@@ -52,7 +54,7 @@ public class Clock extends Thread{
                         currentPulse++;
                     }
                     System.out.println(ticks[currentPulse%2]);
-                    //playback.play(currentStep, currentPulse);
+                    playback.playSound(currentStep, currentPulse);
                 }
 
                 lastTime = currentTime;

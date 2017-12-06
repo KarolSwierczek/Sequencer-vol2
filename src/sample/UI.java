@@ -15,16 +15,8 @@ public class UI extends Thread{
     @FXML
     private Slider PulseCount1,PulseCount2,PulseCount3,PulseCount4,PulseCount5,PulseCount6,PulseCount7,PulseCount8,
             Gate1,Gate2,Gate3,Gate4,Gate5,Gate6,Gate7,Gate8,steps,tempo,Pitch1,Pitch2,Pitch3,Pitch4,Pitch5,Pitch6,Pitch7,Pitch8;
-    public UI() {
-//        changeplay();
-//        changetempo();
-//        changesteps();
-//        changeskip();
-//        changepulsecounts();
-//        changemode();
-//        changeinstrument();
-//        changepitch();
-    }
+
+
     public void changeplay(){
         settings.setPlay(play.isSelected());
         synchronized (lock) {
@@ -98,6 +90,14 @@ public class UI extends Thread{
 
     public void setSettings( Settings value ) {
         settings = value;
+        changeplay();
+        changetempo();
+        changesteps();
+        changeskip();
+        changepulsecounts();
+        changemode();
+        //changeinstrument();
+        changepitch();
     }
 
     public Object getLock(){
