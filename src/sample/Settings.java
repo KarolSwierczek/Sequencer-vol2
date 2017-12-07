@@ -33,7 +33,7 @@ public class Settings {
     public int[] getPitch() { return Pitch; }
 
 
-    public void setPlay(boolean play){ Play=play;  System.out.println(play);}
+    public void setPlay(boolean play){ Play=play;}
     public void setTempo(int tempo){ Tempo=tempo; }
     public void setSteps(int steps){Steps=steps;}
     public void setSkip(boolean [] skip){ Skip=skip; }

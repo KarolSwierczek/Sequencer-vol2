@@ -1,4 +1,9 @@
-package sample;//public class Modulation {
+package sample;
+
+public class Modulation {
+    private Settings settings;
+
+    public Modulation(Settings s) {settings = s;}
 //
 //    public WavFile getFinalSound(){
 //        /*
@@ -52,4 +57,4 @@ package sample;//public class Modulation {
 //        // shift instrument in pitch but do not affect length
 //        // !!! could also choose from instrument samples !!!
 //    }
-//}
+}

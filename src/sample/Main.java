@@ -18,7 +18,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Settings settings = new Settings();
-        Playback playback = new Playback();
+        Playback playback = new Playback(settings);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sample.fxml"));
 
@@ -29,7 +29,7 @@ public class Main extends Application {
         UI ui = fxmlLoader.getController();
         ui.setSettings(settings);
 
-        Clock clock = new Clock(settings, ui.getLock());
+        Clock clock = new Clock(settings, playback, ui.getLock());
 
         clock.start();
         ui.start();
