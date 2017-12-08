@@ -18,9 +18,19 @@ public class Settings {
     private int[] gateMode;
     private String Instrument;
     private int[] Pitch;
+    private double Decay;
+
+    public static double TIME_CONSTANT = 200;
+    public static double MAX_TEMPO = 8;
 
 
-    public Settings(){ Skip= new boolean[8]; Play=false;}
+    public Settings() {
+        // values below are assigned for testing purposes
+        Skip = new boolean[8];
+        Play = false;
+        Decay = 2;
+        Instrument = "Lead_Terc";
+    }
 
 
     public boolean getPlay() { return Play; }
@@ -31,6 +41,7 @@ public class Settings {
     public int[] getGateMode() { return gateMode; }
     public String getInstrument() { return Instrument; }
     public int[] getPitch() { return Pitch; }
+    public double getDecay() { return Decay; }
 
 
     public void setPlay(boolean play){ Play=play;}
@@ -41,4 +52,5 @@ public class Settings {
     public void setGateMode(int [] gatemode){ gateMode=gatemode; }
     public void setInstrument(String instrument){ Instrument=instrument; }
     public void setPitch(int []pitch){ Pitch = pitch; }
+    public void setDecay(double decay){ Decay = decay; }
 }

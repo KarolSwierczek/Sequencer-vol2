@@ -21,7 +21,6 @@ public class UI extends Thread{
         settings.setPlay(play.isSelected());
         synchronized (lock) {
             if (play.isSelected()) {
-                System.out.println("notified");
                 lock.notify();
             }
         }
@@ -88,6 +87,7 @@ public class UI extends Thread{
         });
     }
 
+
     public void setSettings( Settings value ) {
         settings = value;
         changeplay();
@@ -98,6 +98,7 @@ public class UI extends Thread{
         changemode();
         //changeinstrument();
         changepitch();
+        //changedecay();
     }
 
     public Object getLock(){

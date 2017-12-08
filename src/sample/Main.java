@@ -18,7 +18,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Settings settings = new Settings();
-        Playback playback = new Playback(settings);
+        SoundBank soundbank = new SoundBank();
+        Modulation modulation = new Modulation(settings, soundbank);
+        Playback playback = new Playback(modulation);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sample.fxml"));
 
@@ -39,7 +41,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.setOnHidden((WindowEvent event) -> {
             clock.setExit(true);
-            System.out.println("exiting...");
+            System.out.println("Exiting...");
             Platform.exit();
             System.exit(0);
         });
