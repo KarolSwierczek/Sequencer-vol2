@@ -28,7 +28,7 @@ public class Settings {
         // values below are assigned for testing purposes
         Skip = new boolean[8];
         Play = false;
-        Decay = 2;
+        Decay = 1;
         Instrument = "Lead_Terc";
     }
 

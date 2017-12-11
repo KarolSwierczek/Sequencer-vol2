@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SoundBank {
-    private static int BYTE_LENGTH = 2116924;
+    private static int BYTE_LENGTH = 2116924; // length of sounds in the sound bank in bytes
     Map<String, byte[][]> soundBank = new HashMap<String, byte[][]>();
 
     public SoundBank(){

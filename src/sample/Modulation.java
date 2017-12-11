@@ -8,8 +8,8 @@ import java.io.File;
 public class Modulation {
     private Settings settings;
     private SoundBank soundbank;
-    private static int BYTE_LENGTH = 2116924; // length of a sound in bytes
-    private static float TIME_LENGTH = 12000; // length of a sound in ms
+    private static int BYTE_LENGTH = 2116924; // length of sounds in the sound bank in bytes
+    private static float TIME_LENGTH = 12000; // length of sounds in the sound bank in miliseconds
 
     public Modulation(Settings s, SoundBank b) {
         settings = s;
@@ -38,9 +38,10 @@ public class Modulation {
         }
         double pulseTime = settings.TIME_CONSTANT*settings.MAX_TEMPO/(settings.getTempo()+1);
         int byteLength = (int)(BYTE_LENGTH*(targetLength*pulseTime/TIME_LENGTH));
+        double realDecay = Math.pow(10, settings.getDecay());
         short[][] shorterSound = byte2short(sound, byteLength);
         for(int i = 0; i < byteLength/4; i++){
-            double fadeOut = 1 - Math.pow((double)(i+1)*4/byteLength, settings.getDecay());
+            double fadeOut = 1 - Math.pow((double)(i+1)*4/byteLength, realDecay);
             shorterSound[0][i] = (short)(shorterSound[0][i] * fadeOut);
             shorterSound[1][i] = (short)(shorterSound[1][i] * fadeOut);
         }
