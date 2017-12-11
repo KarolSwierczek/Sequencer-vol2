@@ -11,7 +11,7 @@ public class SoundBank {
     Map<String, byte[][]> soundBank = new HashMap<String, byte[][]>();
 
     public SoundBank(){
-        loadSoundBank("C:/Users/Karol/Desktop/AGH/Sequencer_v2/src/SoundBank");
+        loadSoundBank("C:/Users/NinaNina/Desktop/Studia!/Java - Projekt/src/SoundBank");
     }
 
     private void loadSoundBank(String path){

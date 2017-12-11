@@ -1,4 +1,4 @@
-//package sample;
+package sample;//package sample;
 //
 //public class Sequencer {
 //    private Settings settings;

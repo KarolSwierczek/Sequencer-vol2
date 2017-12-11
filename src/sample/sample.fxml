@@ -8,11 +8,11 @@
 
 <!--<?import javafx.collections.FXCollections?>-->
 <!--<?import java.lang.String?>-->
-<!--<?import com.sun.deploy.uitoolkit.impl.fx.ui.FXDefaultPreloader.FXPreloaderPane?>-->
+<!--<?import com.sun.deploy.uitoolkit.impl.fx.ui.FXDefaultPreloader.FXPrloaderPane?>-->
 
 <VBox prefHeight="596.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UI">
     <Slider fx:id="tempo" blockIncrement="1.0" majorTickUnit="1.0" max="8.0" minorTickCount="0" onMouseReleased="#changetempo" pickOnBounds="false" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-    <ComboBox fx:id="instrument" onMousePressed="#changeinstrument" prefWidth="150.0" promptText="Instrument">
+    <ComboBox fx:id="instrument" onAction="#changeinstrument" prefWidth="150.0" promptText="Instrument">
         <!--<items>-->
             <!--<FXCollections  fx:factory="emptyObservableList">-->
                 <!--<String fx:value="Lead_Terc"/>-->

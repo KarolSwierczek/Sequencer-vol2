@@ -1,9 +1,14 @@
 package sample;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
+import javafx.collections.ObservableList;
+import java.io.File;
+import java.io.FilenameFilter;
+
 
 public class UI extends Thread{
     private Settings settings;
@@ -15,6 +20,27 @@ public class UI extends Thread{
     @FXML
     private Slider PulseCount1,PulseCount2,PulseCount3,PulseCount4,PulseCount5,PulseCount6,PulseCount7,PulseCount8,
             Gate1,Gate2,Gate3,Gate4,Gate5,Gate6,Gate7,Gate8,steps,tempo,Pitch1,Pitch2,Pitch3,Pitch4,Pitch5,Pitch6,Pitch7,Pitch8;
+
+    private File directory;
+
+    private String[] Instrument_Names(){
+        directory = new File("C:/Users/NinaNina/Desktop/Studia!/Java - Projekt/src/SoundBank");
+        String[] instrument_folders = directory.list(new FilenameFilter() {
+            @Override
+            public boolean accept(File current, String name) {
+                return new File(current, name).isDirectory();
+            }
+        });
+        return instrument_folders;
+    }
+
+    @FXML
+    public void initialize(){
+        ObservableList<String> options =  FXCollections.observableArrayList(Instrument_Names());
+        instrument.setItems(options);
+        instrument.setValue(options.get(0));
+    }
+
 
 
     public void changeplay(){
@@ -96,7 +122,7 @@ public class UI extends Thread{
         changeskip();
         changepulsecounts();
         changemode();
-        //changeinstrument();
+        changeinstrument();
         changepitch();
         //changedecay();
     }
