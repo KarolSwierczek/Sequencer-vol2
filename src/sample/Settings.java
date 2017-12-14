@@ -29,7 +29,6 @@ public class Settings {
         Skip = new boolean[8];
         Play = false;
         Decay = 1;
-        Instrument = "Lead_Terc";
     }
 
 
