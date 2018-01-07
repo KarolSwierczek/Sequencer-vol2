@@ -11,23 +11,21 @@ public class Settings {
     //PulseCount - zwraca wartosci w przedziale 1-8 z kazdego slidera tak jak na obrazku
     private int[] PulseCount;
     //gateMode - zwraca wartosci 1-4 z kazdego slidera tak jak na obrazku
-    //1 -LONG - one long sound lasting N pulses
-    //2 -MULTIPLE - N short sounds
-    //3 -SINGLE - one short sound and N-1 pulses-long pause
-    //4 -PAUSE - N pulses-long pause
+    //0 -LONG - one long sound lasting N pulses
+    //1 -MULTIPLE - N short sounds
+    //2 -SINGLE - one short sound and N-1 pulses-long pause
+    //3 -PAUSE - N pulses-long pause
     private int[] gateMode;
     private String Instrument;
     private int[] Pitch;
     private double Decay;
-
     public static double TIME_CONSTANT = 200;
     public static double MAX_TEMPO = 8;
 
 
     public Settings() {
         // values below are assigned for testing purposes
-        Skip = new boolean[8];
-        Play = false;
+        //Skip = new boolean[8];
         Decay = 1;
     }
 

@@ -55,23 +55,23 @@ public class Modulation {
         //0 - dont play, (1-8) play sound of length 1-8
 
         switch(gateMode){
-            case 1:
+            case 4:
                 if(currentPulse == 0){
                     soundLegth =  settings.getPulseCount()[currentStep];
                 }
                 break;
 
-            case 2:
+            case 3:
                 soundLegth = 1;
                 break;
 
-            case 3:
+            case 2:
                 if(currentPulse == 0){
                     return 1;
                 }
                 break;
 
-            case 4:
+            case 1:
                 break;
         }
         return soundLegth;

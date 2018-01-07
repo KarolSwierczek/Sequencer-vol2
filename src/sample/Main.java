@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -36,9 +37,11 @@ public class Main extends Application {
         clock.start();
         ui.start();
 
-
+        Font.loadFont(getClass().getResourceAsStream("lcddot.ttf"), 10);
         primaryStage.setTitle("Sekwencer");
-        primaryStage.setScene(new Scene(root, 600, 500));
+        Scene scene = new Scene(root, 800, 596 );
+        scene.getStylesheets().add(UI.class.getResource("Skins.css").toExternalForm());
+        primaryStage.setScene(scene);
         primaryStage.setOnHidden((WindowEvent event) -> {
             clock.setExit(true);
             System.out.println("Exiting...");

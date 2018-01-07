@@ -1,0 +1,132 @@
+
+#pitch *.thumb {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 38 16 0 0;
+    -fx-background-image: url("images/suwak.png");
+}
+#pitch:focused *.thumb {
+    -fx-effect: dropshadow( three-pass-box , rgba(255,0,0,0.5) , 8 , 0.5 , 0 , 0 );
+}
+#pitch *.track {
+    -fx-background-image: url("images/za_suwakiem.png");
+    -fx-padding: 136 16 0 0;
+
+}
+
+#pulse *.thumb {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 44 22 0 0;
+    -fx-background-image: url("images/suwak2.png");
+}
+#pulse:focused *.thumb {
+    -fx-effect: dropshadow( three-pass-box , rgba(223, 223, 31, 1.0) , 8 , 0.5 , 0 , 0 );
+}
+#pulse *.track {
+    -fx-background-image: url("images/za_suwakiem2.png");
+    -fx-padding: 136 22 0 0;
+    }
+
+
+#gate *.thumb {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 16 22 0 0;
+    -fx-background-image: url("images/suwak3.png");
+}
+#gate:focused *.thumb {
+    -fx-effect: dropshadow( three-pass-box , rgba(247, 126, 7, 1.0) , 8 , 0.5 , 0 , 0 );
+}
+#gate *.track {
+    -fx-background-image: url("images/za_suwakiem3.png");
+    -fx-padding: 67 22 0 0;
+}
+
+#tempo *.thumb {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 16 38 0 0;
+    -fx-background-image: url("images/suwak4.png");
+}
+#tempo:focused *.thumb {
+    -fx-effect: dropshadow( three-pass-box , rgba(255,0,0,0.5) , 8 , 0.5 , 0 , 0 );
+}
+#tempo *.track {
+    -fx-background-image: url("images/za_suwakiem4.png");
+    -fx-padding: 16 136 0 0;
+
+}
+
+#skip *.box {
+-fx-background-color: white;
+-fx-border-color:grey;
+-fx-border-radius:3px;
+}
+
+#skip:selected *.mark {
+-fx-background-color: transparent;
+}
+
+#skip:selected *.box {
+-fx-background-color: red;
+-fx-effect: dropshadow( three-pass-box , rgba(255,0,0,0.5) , 8 , 0.5 , 0 , 0 );
+}
+
+#play *.box {
+-fx-background-image: url("images/switch_off.png");
+-fx-background-color: transparent;
+    -fx-background-size: contain;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 44 45 0 0;
+}
+
+#play:selected *.mark {
+-fx-background-color: transparent;
+}
+
+#play:selected *.box {
+-fx-background-image: url("images/switch_on.png");
+}
+
+
+.root > .label {
+    -fx-text-fill: #f01111;
+    -fx-effect: dropshadow( three-pass-box , #b10000 , 18 , 0.5 , 0 , 0 );
+}
+@font-face {
+     src: url("lcddot.ttf");
+ }
+* {
+     -fx-font-family: "LCDDot";
+}
+#window {
+    -fx-background-image: url("images/metro.png");
+    -fx-background-color: #000000;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+.transparent-background {
+    -fx-background-color: transparent;
+}
+
+.combo-box .list-cell
+{
+    -fx-background: transparent;
+    -fx-background-color: gray;
+}
+
+.combo-box-popup .list-view
+{
+    -fx-background-color: transparent,gray;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}
+
+
+

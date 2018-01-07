@@ -1,72 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <!--<?import javafx.collections.FXCollections?>-->
 <!--<?import java.lang.String?>-->
 <!--<?import com.sun.deploy.uitoolkit.impl.fx.ui.FXDefaultPreloader.FXPrloaderPane?>-->
 
-<VBox prefHeight="596.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UI">
-    <Slider fx:id="tempo" blockIncrement="1.0" majorTickUnit="1.0" max="8.0" minorTickCount="0" onMouseReleased="#changetempo" pickOnBounds="false" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-    <ComboBox fx:id="instrument" onAction="#changeinstrument" prefWidth="150.0" promptText="Instrument">
+<VBox id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UI">
+   <AnchorPane fx:id="container" cacheShape="false" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="650.0" prefWidth="800.0" scaleShape="false" VBox.vgrow="NEVER">
+      <children>
+         <Slider id="pitch" fx:id="Pitch1" layoutX="374.0" layoutY="50.0" majorTickUnit="1.0" max="12.0" maxHeight="-Infinity" maxWidth="-Infinity" min="0.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+         <Slider id="pitch" fx:id="Pitch2" layoutX="425.0" layoutY="50.0" majorTickUnit="1.0" max="12.0" maxHeight="-Infinity" maxWidth="-Infinity" min="0.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+         <Slider id="pitch" fx:id="Pitch3" layoutX="476.0" layoutY="50.0" majorTickUnit="1.0" max="12.0" maxHeight="-Infinity" maxWidth="-Infinity" min="0.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+         <Slider id="pitch" fx:id="Pitch4" layoutX="527.0" layoutY="50.0" majorTickUnit="1.0" max="12.0" maxHeight="-Infinity" maxWidth="-Infinity" min="0.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+         <Slider id="pitch" fx:id="Pitch5" layoutX="578.0" layoutY="50.0" majorTickUnit="1.0" max="12.0" maxHeight="-Infinity" maxWidth="-Infinity" min="0.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+         <Slider id="pitch" fx:id="Pitch6" layoutX="629.0" layoutY="50.0" majorTickUnit="1.0" max="12.0" maxHeight="-Infinity" maxWidth="-Infinity" min="0.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+         <Slider id="pitch" fx:id="Pitch7" layoutX="680.0" layoutY="50.0" majorTickUnit="1.0" max="12.0" maxHeight="-Infinity" maxWidth="-Infinity" min="0.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+         <Slider id="pitch" fx:id="Pitch8" layoutX="732.0" layoutY="50.0" majorTickUnit="1.0" max="12.0" maxHeight="-Infinity" maxWidth="-Infinity" min="0.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+          <ComboBox fx:id="instrument" centerShape="false" layoutX="104.0" layoutY="295.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#changeinstrument" prefHeight="30.0" prefWidth="150.0" promptText="Instrument">
         <!--<items>-->
             <!--<FXCollections  fx:factory="emptyObservableList">-->
                 <!--<String fx:value="Lead_Terc"/>-->
             <!--</FXCollections>-->
         <!--</items>-->
     </ComboBox>
-    <Slider fx:id="steps" blockIncrement="1" majorTickUnit="1" max="8.0" minorTickCount="0" onMouseReleased="#changesteps" pickOnBounds="false" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="8.0" />
-   <ToolBar id="PulseCounts" layoutX="10.0" layoutY="111.0" prefHeight="40.0" prefWidth="200.0">
-      <items>
-         <Slider fx:id="PulseCount1" blockIncrement="1.0" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="PulseCount2" blockIncrement="1.0" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="PulseCount3" blockIncrement="1.0" layoutX="82.0" layoutY="10.0" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="PulseCount4" blockIncrement="1.0" layoutX="154.0" layoutY="10.0" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="PulseCount5" blockIncrement="1.0" layoutX="226.0" layoutY="10.0" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="PulseCount6" blockIncrement="1.0" layoutX="298.0" layoutY="10.0" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="PulseCount7" blockIncrement="1.0" layoutX="370.0" layoutY="10.0" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="PulseCount8" blockIncrement="1.0" layoutX="442.0" layoutY="10.0" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
-      </items>
-   </ToolBar>
-   <ToolBar fx:id="GateModes" prefHeight="40.0" prefWidth="200.0">
-      <items>
-         <Slider fx:id="Gate1" blockIncrement="1.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="Gate2" blockIncrement="1.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="Gate3" blockIncrement="1.0" layoutX="82.0" layoutY="10.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="Gate4" blockIncrement="1.0" layoutX="154.0" layoutY="10.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="Gate5" blockIncrement="1.0" layoutX="226.0" layoutY="10.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="Gate6" blockIncrement="1.0" layoutX="298.0" layoutY="10.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="Gate7" blockIncrement="1.0" layoutX="370.0" layoutY="10.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-         <Slider fx:id="Gate8" blockIncrement="1.0" layoutX="442.0" layoutY="10.0" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="140.0" prefWidth="68.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
-      </items>
-   </ToolBar>
-    <ToolBar fx:id="skipbar" prefHeight="40.0" prefWidth="405.0">
-        <items>
-            <CheckBox fx:id="skip1" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
-            <CheckBox fx:id="skip2" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
-            <CheckBox fx:id="skip3" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
-            <CheckBox fx:id="skip4" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
-            <CheckBox fx:id="skip5" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
-            <CheckBox fx:id="skip6" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
-            <CheckBox fx:id="skip7" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
-            <CheckBox fx:id="skip8" mnemonicParsing="false" onAction="#changeskip" text="Skip" />
+         <Slider id="pulse" fx:id="PulseCount8" blockIncrement="1.0" layoutX="732.0" layoutY="225.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+         <Slider id="pulse" fx:id="PulseCount7" blockIncrement="1.0" layoutX="680.0" layoutY="225.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+         <Slider id="pulse" fx:id="PulseCount6" blockIncrement="1.0" layoutX="629.0" layoutY="225.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+         <Slider id="pulse" fx:id="PulseCount5" blockIncrement="1.0" layoutX="578.0" layoutY="225.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+         <Slider id="pulse" fx:id="PulseCount4" blockIncrement="1.0" layoutX="527.0" layoutY="225.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+         <Slider id="pulse" fx:id="PulseCount3" blockIncrement="1.0" layoutX="476.0" layoutY="225.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+         <Slider id="pulse" fx:id="PulseCount2" blockIncrement="1.0" layoutX="425.0" layoutY="225.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+         <Slider id="pulse" fx:id="PulseCount1" blockIncrement="1.0" layoutX="374.0" layoutY="225.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changepulsecounts" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+         <Slider id="gate" fx:id="Gate8" blockIncrement="1.0" layoutX="732.0" layoutY="415.0" majorTickUnit="1.0" max="4.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="57.0" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="57.0" showTickLabels="false" showTickMarks="false" snapToTicks="true" value="2.0" />
+         <Slider id="gate" fx:id="Gate7" blockIncrement="1.0" layoutX="680.0" layoutY="415.0" majorTickUnit="1.0" max="4.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="57.0" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="57.0" showTickLabels="false" showTickMarks="false" snapToTicks="true" value="2.0" />
+         <Slider id="gate" fx:id="Gate6" blockIncrement="1.0" layoutX="629.0" layoutY="415.0" majorTickUnit="1.0" max="4.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="57.0" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="57.0" showTickLabels="false" showTickMarks="false" snapToTicks="true" value="2.0" />
+         <Slider id="gate" fx:id="Gate5" blockIncrement="1.0" layoutX="578.0" layoutY="415.0" majorTickUnit="1.0" max="4.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="57.0" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="57.0" showTickLabels="false" showTickMarks="false" snapToTicks="true" value="2.0" />
+         <Slider id="gate" fx:id="Gate4" blockIncrement="1.0" layoutX="527.0" layoutY="415.0" majorTickUnit="1.0" max="4.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="57.0" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="57.0" showTickLabels="false" showTickMarks="false" snapToTicks="true" value="2.0" />
+         <Slider id="gate" fx:id="Gate3" blockIncrement="1.0" layoutX="476.0" layoutY="415.0" majorTickUnit="1.0" max="4.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="57.0" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="57.0" showTickLabels="false" showTickMarks="false" snapToTicks="true" value="2.0" />
+         <Slider id="gate" fx:id="Gate2" blockIncrement="1.0" layoutX="425.0" layoutY="415.0" majorTickUnit="1.0" max="4.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="57.0" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="57.0" showTickLabels="false" showTickMarks="false" snapToTicks="true" value="2.0" />
+         <Slider id="gate" fx:id="Gate1" blockIncrement="1.0" layoutX="374.0" layoutY="415.0" majorTickUnit="1.0" max="4.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="57.0" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changemode" orientation="VERTICAL" prefHeight="57.0" showTickLabels="false" showTickMarks="false" snapToTicks="true" value="2.0" />
 
-        </items>
-    </ToolBar>
-   <CheckBox fx:id="play" mnemonicParsing="false" onAction="#changeplay" text="Play" />
-   <ToolBar fx:id="Pitchbar" prefHeight="40.0" prefWidth="200.0">
-      <items>
-         <Slider fx:id="Pitch1" majorTickUnit="1.0" max="12.0" min="0.0" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-         <Slider fx:id="Pitch2" layoutX="10.0" layoutY="10.0" majorTickUnit="1.0" max="12.0" min="0.0" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-         <Slider fx:id="Pitch3" layoutX="44.0" layoutY="10.0" majorTickUnit="1.0" max="12.0" min="0.0" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-         <Slider fx:id="Pitch4" layoutX="78.0" layoutY="10.0" majorTickUnit="1.0" max="12.0" min="0.0" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-         <Slider fx:id="Pitch5" layoutX="112.0" layoutY="10.0" majorTickUnit="1.0" max="12.0" min="0.0" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-         <Slider fx:id="Pitch6" layoutX="146.0" layoutY="10.0" majorTickUnit="1.0" max="12.0" min="0.0" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-         <Slider fx:id="Pitch7" layoutX="180.0" layoutY="10.0" majorTickUnit="1.0" max="12.0" min="0.0" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-         <Slider fx:id="Pitch8" cache="true" layoutX="214.0" layoutY="10.0" majorTickUnit="1.0" max="12.0" min="0.0" minorTickCount="0" onMouseReleased="#changepitch" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-      </items></ToolBar>
+            <CheckBox id="skip" fx:id="skip1" layoutX="374.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
+            <CheckBox id="skip" fx:id="skip2" layoutX="425.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
+            <CheckBox id="skip" fx:id="skip3" layoutX="476.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
+            <CheckBox id="skip" fx:id="skip4" layoutX="527.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
+            <CheckBox id="skip" fx:id="skip5" layoutX="578.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
+            <CheckBox id="skip" fx:id="skip6" layoutX="629.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
+            <CheckBox id="skip" fx:id="skip7" layoutX="680.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
+            <CheckBox id="skip" fx:id="skip8" layoutX="732.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
+
+
+          <Slider id="tempo" fx:id="tempo" blockIncrement="1.0" layoutX="77.0" layoutY="365.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minorTickCount="0" onMouseReleased="#changetempo" pickOnBounds="false" prefHeight="50.0" prefWidth="200.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
+          <Slider id="tempo" fx:id="steps" blockIncrement="1" layoutX="77.0" layoutY="472.0" majorTickUnit="1" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changesteps" pickOnBounds="false" prefHeight="50.0" prefWidth="200.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="8.0" />
+
+          <CheckBox id="play" fx:id="play" layoutX="152.0" layoutY="225.0" mnemonicParsing="false" onAction="#changeplay" prefWidth="50.0" />
+          <Label layoutX="77.0" layoutY="340.0" text="Tempo" >
+             <font>
+                 <Font name="System Bold" size="15.0" />
+             </font></Label>
+          <Label layoutX="77.0" layoutY="444.0" text="Number of active steps" >
+            <font>
+                <Font name="System Bold" size="15.0" />
+             </font></Label>
+          <Label layoutX="209.0" layoutY="242.0" text="PLAY">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font></Label>
+      </children>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+   </AnchorPane>
 </VBox>

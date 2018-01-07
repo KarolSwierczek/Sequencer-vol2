@@ -1,5 +1,4 @@
 package sample;
-
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
@@ -8,10 +7,15 @@ import javafx.scene.control.Slider;
 import javafx.collections.ObservableList;
 import java.io.File;
 import java.io.FilenameFilter;
-
+//import com.oracle.javafx.scenebuilder.kit.util.control.paintpicker.rotator.RotatorControl;
+import javafx.scene.layout.AnchorPane;
 
 public class UI extends Thread{
     private Settings settings;
+    @FXML
+    private AnchorPane container;
+
+    //private RotatorControl tempo2;
     private final Object lock = new Object();
     @FXML
     private CheckBox skip1,skip2,skip3,skip4,skip5,skip6,skip7,skip8,play;
@@ -39,6 +43,9 @@ public class UI extends Thread{
         ObservableList<String> options =  FXCollections.observableArrayList(Instrument_Names());
         instrument.setItems(options);
         instrument.setValue(options.get(0));
+
+//        RotatorControl rotator=new RotatorControl("Rotate");
+//        container.getChildren().add(rotator);
     }
 
 
