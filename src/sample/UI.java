@@ -1,29 +1,31 @@
 package sample;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.AnchorPane;
 import javafx.collections.ObservableList;
 import java.io.File;
 import java.io.FilenameFilter;
-//import com.oracle.javafx.scenebuilder.kit.util.control.paintpicker.rotator.RotatorControl;
-import javafx.scene.layout.AnchorPane;
+import java.io.OutputStream;
+
+
 
 public class UI extends Thread{
     private Settings settings;
     @FXML
     private AnchorPane container;
 
-    //private RotatorControl tempo2;
     private final Object lock = new Object();
     @FXML
-    private CheckBox skip1,skip2,skip3,skip4,skip5,skip6,skip7,skip8,play;
+    private CheckBox skip1,skip2,skip3,skip4,skip5,skip6,skip7,skip8,play,light1,light2,light3,light4,light5,light6,light7,light8;
     @FXML
     private ComboBox instrument;
     @FXML
     private Slider PulseCount1,PulseCount2,PulseCount3,PulseCount4,PulseCount5,PulseCount6,PulseCount7,PulseCount8,
-            Gate1,Gate2,Gate3,Gate4,Gate5,Gate6,Gate7,Gate8,steps,tempo,Pitch1,Pitch2,Pitch3,Pitch4,Pitch5,Pitch6,Pitch7,Pitch8;
+            Gate1,Gate2,Gate3,Gate4,Gate5,Gate6,Gate7,Gate8,steps,tempo,Pitch1,Pitch2,Pitch3,Pitch4,Pitch5,Pitch6,Pitch7,Pitch8, Decay;
 
     private File directory;
 
@@ -43,9 +45,6 @@ public class UI extends Thread{
         ObservableList<String> options =  FXCollections.observableArrayList(Instrument_Names());
         instrument.setItems(options);
         instrument.setValue(options.get(0));
-
-//        RotatorControl rotator=new RotatorControl("Rotate");
-//        container.getChildren().add(rotator);
     }
 
 
@@ -120,6 +119,29 @@ public class UI extends Thread{
         });
     }
 
+    public void createlights() {
+        SimpleBooleanProperty l1 = new SimpleBooleanProperty(false);
+        SimpleBooleanProperty l2 = new SimpleBooleanProperty(false);
+        SimpleBooleanProperty l3 = new SimpleBooleanProperty(false);
+        SimpleBooleanProperty l4 = new SimpleBooleanProperty(false);
+        SimpleBooleanProperty l5 = new SimpleBooleanProperty(false);
+        SimpleBooleanProperty l6 = new SimpleBooleanProperty(false);
+        SimpleBooleanProperty l7 = new SimpleBooleanProperty(false);
+        SimpleBooleanProperty l8 = new SimpleBooleanProperty(false);
+
+        light1.selectedProperty().bind(l1);
+        light2.selectedProperty().bind(l2);
+        light3.selectedProperty().bind(l3);
+        light4.selectedProperty().bind(l4);
+        light5.selectedProperty().bind(l5);
+        light6.selectedProperty().bind(l6);
+        light7.selectedProperty().bind(l7);
+        light8.selectedProperty().bind(l8);
+
+        settings.setLights(new SimpleBooleanProperty[]{l1,l2,l3,l4,l5,l6,l7,l8 });
+    }
+
+    public void changedecay(){ settings.setDecay((int)Decay.getValue()); }
 
     public void setSettings( Settings value ) {
         settings = value;
@@ -131,7 +153,8 @@ public class UI extends Thread{
         changemode();
         changeinstrument();
         changepitch();
-        //changedecay();
+        changedecay();
+        createlights();
     }
 
     public Object getLock(){

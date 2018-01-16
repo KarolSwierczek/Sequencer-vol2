@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.property.SimpleBooleanProperty;
+
 public class Settings {
 
     private boolean Play;
@@ -21,14 +23,7 @@ public class Settings {
     private double Decay;
     public static double TIME_CONSTANT = 200;
     public static double MAX_TEMPO = 8;
-
-
-    public Settings() {
-        // values below are assigned for testing purposes
-        //Skip = new boolean[8];
-        Decay = 1;
-    }
-
+    private SimpleBooleanProperty [] Lights = null;
 
     public boolean getPlay() { return Play; }
     public int getTempo() { return Tempo; }
@@ -50,4 +45,13 @@ public class Settings {
     public void setInstrument(String instrument){ Instrument=instrument; }
     public void setPitch(int []pitch){ Pitch = pitch; }
     public void setDecay(double decay){ Decay = decay; }
+    public void setLights(SimpleBooleanProperty [] lights) { Lights = lights; }
+
+    public void setLightValue(int currentstep,boolean value){
+        for (int i=0; i<Lights.length;i++)
+        {
+            Lights[i].setValue(false);
+        }
+        Lights[currentstep].setValue(value);
+    }
 }

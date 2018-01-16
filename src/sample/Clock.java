@@ -43,13 +43,17 @@ public class Clock extends Thread{
                     }
                     else {
                         currentPulse++;
+
                     }
+                    settings.setLightValue(currentStep,true);
                     playback.playSound(currentStep, currentPulse);
+
                 }
                 lastTime = currentTime;
                 currentTime = System.currentTimeMillis();
                 timeCount += currentTime - lastTime;
             }
+            settings.setLightValue(currentStep,false);
         }
     }
 

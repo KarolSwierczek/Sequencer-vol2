@@ -77,6 +77,25 @@
 -fx-effect: dropshadow( three-pass-box , rgba(255,0,0,0.5) , 8 , 0.5 , 0 , 0 );
 }
 
+.light *.box {
+-fx-background-color: transparent;
+-fx-border-radius:3px;
+}
+
+.light:selected *.mark {
+-fx-background-color: transparent;
+}
+
+.light:selected *.box {
+-fx-background-color: transparent;
+-fx-border-color: red;
+-fx-border-width: 4px;
+-fx-border-radius: 10px;
+-fx-effect: dropshadow( three-pass-box , rgba(255,0,0,0.5) , 8 , 0.5 , 0 , 0 );
+}
+
+
+
 #play *.box {
 -fx-background-image: url("images/switch_off.png");
 -fx-background-color: transparent;
@@ -127,6 +146,5 @@
     -fx-background-insets: 0, 1;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
 }
-
 
 

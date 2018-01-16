@@ -57,16 +57,24 @@
             <CheckBox id="skip" fx:id="skip7" layoutX="680.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
             <CheckBox id="skip" fx:id="skip8" layoutX="732.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeskip" />
 
+            <CheckBox styleClass="light" fx:id="light1" disable="true" opacity="1.0"  layoutX="370.0" layoutY="548.0" mnemonicParsing="false" />
+            <CheckBox styleClass="light" fx:id="light2" disable="true" opacity="1.0" layoutX="421.0" layoutY="548.0" mnemonicParsing="false" />
+            <CheckBox styleClass="light" fx:id="light3" disable="true" opacity="1.0"  layoutX="472.0" layoutY="548.0" mnemonicParsing="false" />
+            <CheckBox styleClass="light" fx:id="light4" disable="true" opacity="1.0"  layoutX="523.0" layoutY="548.0" mnemonicParsing="false" />
+            <CheckBox styleClass="light" fx:id="light5" disable="true" opacity="1.0"  layoutX="574.0" layoutY="548.0" mnemonicParsing="false" />
+            <CheckBox styleClass="light" fx:id="light6" disable="true" opacity="1.0"  layoutX="625.0" layoutY="548.0" mnemonicParsing="false" />
+            <CheckBox styleClass="light" fx:id="light7" disable="true" opacity="1.0"  layoutX="676.0" layoutY="548.0" mnemonicParsing="false" />
+            <CheckBox styleClass="light" fx:id="light8" disable="true" opacity="1.0"  layoutX="728.0" layoutY="548.0" mnemonicParsing="false" />
 
-          <Slider id="tempo" fx:id="tempo" blockIncrement="1.0" layoutX="77.0" layoutY="365.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minorTickCount="0" onMouseReleased="#changetempo" pickOnBounds="false" prefHeight="50.0" prefWidth="200.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="0.0" />
-          <Slider id="tempo" fx:id="steps" blockIncrement="1" layoutX="77.0" layoutY="472.0" majorTickUnit="1" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changesteps" pickOnBounds="false" prefHeight="50.0" prefWidth="200.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="8.0" />
-
+          <Slider id="tempo" fx:id="tempo" blockIncrement="1.0" layoutX="77.0" layoutY="365.0" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minorTickCount="0" onMouseReleased="#changetempo" pickOnBounds="false" prefHeight="50.0" prefWidth="200.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+          <Slider id="tempo" fx:id="steps" blockIncrement="1" layoutX="77.0" layoutY="435.0" majorTickUnit="1" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changesteps" pickOnBounds="false" prefHeight="50.0" prefWidth="200.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="8.0" />
+          <Slider id="tempo" fx:id="Decay" blockIncrement="1" layoutX="77.0" layoutY="505.0" majorTickUnit="1" max="1.0" maxHeight="-Infinity" maxWidth="-Infinity" min="-1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" onMouseReleased="#changedecay" pickOnBounds="false" prefHeight="50.0" prefWidth="200.0" showTickLabels="true" showTickMarks="true" value="1.0" />
           <CheckBox id="play" fx:id="play" layoutX="152.0" layoutY="225.0" mnemonicParsing="false" onAction="#changeplay" prefWidth="50.0" />
-          <Label layoutX="77.0" layoutY="340.0" text="Tempo" >
+          <Label layoutX="77.0" layoutY="350.0" text="Tempo">
              <font>
                  <Font name="System Bold" size="15.0" />
              </font></Label>
-          <Label layoutX="77.0" layoutY="444.0" text="Number of active steps" >
+          <Label layoutX="77.0" layoutY="420.0" text="Number of active steps">
             <font>
                 <Font name="System Bold" size="15.0" />
              </font></Label>
@@ -74,6 +82,11 @@
             <font>
                <Font name="System Bold" size="15.0" />
             </font></Label>
+         <Label layoutX="77.0" layoutY="490.0" text="Decay">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font>
+         </Label>
       </children>
       <VBox.margin>
          <Insets />
