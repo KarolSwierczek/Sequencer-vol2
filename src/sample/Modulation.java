@@ -32,7 +32,7 @@ public class Modulation {
         return sound;
     }
 
-    private byte[] changeLength(byte[] sound, int targetLength){
+    public byte[] changeLength(byte[] sound, int targetLength){
         if(targetLength == 0){
             return null;
         }
@@ -77,7 +77,7 @@ public class Modulation {
         return soundLegth;
     }
 
-    private short[][] byte2short(byte[] array, int length){
+    public static short[][] byte2short(byte[] array, int length){
         int shortLength = length/4;
         short[][] shortArray = new short[2][shortLength];
         for(int i = 0; i < 4*shortLength; i+=4) {
@@ -87,7 +87,7 @@ public class Modulation {
         return shortArray;
     }
 
-    private byte[] short2byte(short[][] array){
+    public static byte[] short2byte(short[][] array){
         int length = array[0].length;
         byte[] byteArray = new byte[4*length];
         for(int i = 0; i<4*length; i+=4){
@@ -101,7 +101,7 @@ public class Modulation {
 
     public void test(){
         try {
-            AudioInputStream soundStream = AudioSystem.getAudioInputStream(new File("C:/Users/Karol/Desktop/AGH/Sequencer_v2/src/testsine.wav"));
+            AudioInputStream soundStream = AudioSystem.getAudioInputStream(new File("src/testsine.wav"));
             byte[] sound = new byte[BYTE_LENGTH];
             soundStream.read(sound, 0, BYTE_LENGTH);
             soundStream.close();

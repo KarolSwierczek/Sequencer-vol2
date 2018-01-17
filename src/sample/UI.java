@@ -30,7 +30,7 @@ public class UI extends Thread{
     private File directory;
 
     private String[] Instrument_Names(){
-        directory = new File("C:/Users/NinaNina/Desktop/Studia!/Java - Projekt/src/SoundBank");
+        directory = new File("src/SoundBank");
         String[] instrument_folders = directory.list(new FilenameFilter() {
             @Override
             public boolean accept(File current, String name) {
